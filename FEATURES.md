@@ -6,16 +6,16 @@ at runtime by the managers under `Managers/`, `Mods/` and `Menu/`.
 
 - **Menu version:** 1.0.3
 - **Tabs:** 45
-- **Features declared in the static tabs:** 1816
-- **Features built at runtime:** 187
-- **Total features:** 2003
+- **Features declared in the static tabs:** 1845
+- **Features built at runtime:** 195
+- **Total features:** 2040
 
 A feature marked **Action** fires once when clicked; everything else is a toggle. The text
 after the dash is the in-menu tooltip.
 
 ## Contents
 
-- [Main](#main) — 1816
+- [Main](#main) — 1845
 - [Settings](#settings) — 0
 - [Menu Settings](#menu-settings) — 0
 - [Room Settings](#room-settings) — 0
@@ -58,13 +58,15 @@ after the dash is the in-menu tooltip.
 - [Detected Settings](#detected-settings) — 0
 - [Achievements](#achievements) — 0
 - [Mod List](#mod-list) — 0
-- [Runtime-built features](#runtime-built-features) — 187
+- [External Mods](#external-mods) — 0
+- [iiServers](#iiservers) — 0
+- [Runtime-built features](#runtime-built-features) — 195
 
 ---
 
 ## Main
 
-- **Join Discord** — *Action.* Invites you to join the ii's Stupid Mods Discord server.
+- **Join Discord** — *Action.* Invites you to join the ii's <b>Stupid</b> Mods Discord server.
 - **Settings** — *Action.* Opens the settings tab.
 - **Players** — *Action.* Opens the players tab.
 - **Favorite Mods** — *Action.* Opens your favorite mods. Favorite mods with left grip.
@@ -78,9 +80,10 @@ after the dash is the in-menu tooltip.
 - **Fun Mods** — *Action.* Opens the fun mods.
 - **Sound Mods** — *Action.* Opens the sound mods.
 - **Projectile Mods** — *Action.* Opens the projectile mods.
-- **Master Mods** — *Action.* Opens the master mods.
+- **Master Mods** — *Action.* Currently disabled for development purposes.
 - **Overpowered Mods** — *Action.* Opens the overpowered mods.
 - **Experimental Mods** — *Action.* Opens the experimental mods.
+- **External Mods** — *Action.* One-click installer for external mods (Utilla, WalkSim Fixed, TooMuchInfo, LibrePad). Always pulls the latest GitHub release and drops the .dll into BepInEx/plugins — then restart.
 - **Detected Mods** — *Action.* Opens the detected mods.
 - **Achievements** — *Action.* Opens the achievements page.
 - **Credits** — *Action.* Opens the credits page.
@@ -92,6 +95,7 @@ after the dash is the in-menu tooltip.
 - **Plugin Settings** — *Action.* Opens the settings for the plugins.
 - **Soundboard Settings** — *Action.* Opens the settings for the soundboard.
 - **Room Settings** — *Action.* Opens the settings for the room mods.
+- **iiServers** — *Action.* Private Photon Cloud for banned players. Opens the iiServers page, where everyone shares the same room codes. Also available in Room Mods and Room Settings.
 - **Safety Settings** — *Action.* Opens the settings for the safety mods.
 - **Movement Settings** — *Action.* Opens the settings for the movement mods.
 - **Advantage Settings** — *Action.* Opens the settings for the advantage mods.
@@ -108,6 +112,9 @@ after the dash is the in-menu tooltip.
 - **Physical Menu** — Freezes the menu in world space.
 - **Bark Menu** — Allows you to spawn the menu similar to bark by banging on your chest.
 - **Wrist Menu** — Turns the menu into a weird wrist watch, click your hand to open it.
+- **Throwable Ring Menu** — Hold the menu button to grab an orange disc, release it to throw the menu forward.
+- **Throwable Menu Follow** — Throwable Ring Menu only: keeps the thrown menu in front of you while it is open.
+- **Throwable Menu Gestures** — Hold your left hand open like a stop sign, then gesture with your right hand to smoothly move the followed menu.
 - **Watch Menu** — Turns the menu into a watch, click your joystick to toggle, and move your joystick to select a mod.
 - **Shiny Menu** — Makes the menu's textures use the old shader.
 - **Transparent Menu** — Makes the menu transparent.
@@ -149,8 +156,12 @@ after the dash is the in-menu tooltip.
 - **Animated Title** — Animates the title of the menu.
 - **Voice Commands** — Enable and disable mods using your voice. Activate it like how you would any other voice assistant, such as "Jarvis, Platforms".
 - **Chain Voice Commands** — Makes voice commands chain together, so you don't have to repeatedly ask it to listen to you.
-- **AI Assistant** — A voice assistant with artificial intelligence capabilities.
-- **Click GUI** — A modern version of the menu.
+- **AI Assistant** — A voice assistant with artificial intelligence capabilities. Say your wake word (default "System") to wake it up.
+- **Wake Assistant** — *Action.* Wakes the assistant without saying the wake word, so you can test it or use it on PC.
+- **Change Wake Word** — *Action.* The word the assistant listens for, such as System or Jarvis. "Hey <word>" works too.
+- **Assistant Voice** — Gives the assistant a voice with the menu TTS, on top of the Narrate Assistant toggles.
+- **Assistant Greeting** — Says "Hey there! How can I help?" when it hears the wake word. Edit iiMenu_Greeting.txt to change the line.
+- **Voice Assistant Orb** — Spinning orb that appears in front of you while the assistant is listening, thinking or talking.
 - **Narrate Assistant** — Narrates what the voice assistant says locally.
 - **Global Narrate Assistant** — Narrates what the voice assistant says globally.
 - **Global Dynamic Sounds** — Plays the dynamic sounds through your microphone.
@@ -244,6 +255,7 @@ after the dash is the in-menu tooltip.
 - **Disable Board Colors** — Disables the board colors to look legitimate on screen share.
 - **Disable Custom Text Colors** — Disables the text colors on the boards to make them match their original theme.
 - **Custom Board Fonts** — Applies the menu's font to the boards.
+- **Disable Orange Leaderboards** — Keeps every map's leaderboard panels orange. Enable this to use the original board colors.
 - **Disable Keyboard Delay** — Disables the delay between pressing keys on the keyboard.
 - **Disable PC Keyboard Sounds** — Disables the sound for pressing keys on PC.
 - **Info Hide ID** — Hides your ID in the information page.
@@ -269,6 +281,8 @@ after the dash is the in-menu tooltip.
 - **Disable Autosave** — Disables the auto save mechanism.
 - **Panic** — *Action.* Disables every single active mod.
 - **Exit Room Settings** — *Action.* Returns you back to the settings menu.
+- **Open Room Mods** — *Action.* Opens disconnect, reconnect, join, create, and other room controls.
+- **iiServers** — *Action.* Opens the iiServers connection page, where everyone shares the same room codes.
 - **20 Player Rooms** — Changes Create Public and Create Private to 20 player capacity.
 - **crTime** — *Action.* Changes the amount of time waited before attempting to reconnect again.
 - **Exit Movement Settings** — *Action.* Returns you back to the settings menu.
@@ -340,12 +354,15 @@ after the dash is the in-menu tooltip.
 - **Disconnect** — *Action.* Disconnects you from the the room.
 - **Reconnect** — *Action.* Reconnects you from and to the the room.
 - **Cancel Reconnect** — *Action.* Cancels the reconnection loop.
+- **Fix My Map** — *Action.* Reloads the world when the map is missing, which happens after connecting to iiServers.
+- **Dump World State** — *Action.* Writes everything the game can see of the world to the BepInEx log, to diagnose a missing map.
 - **Join Last Room** — *Action.* Joins the last room you left.
 - **Join Random** — *Action.* Joins a random public room.
 - **Create Public** — *Action.* Creates a public room.
 - **Create Private** — *Action.* Creates a private room.
 - **Fast Disconnect** — Uses the fastest method of disconnecting possible.
-- **Join Menu Room** — *Action.* Connects you to a room that is exclusive to ii's Stupid Menu users.
+- **iiServers** — *Action.* Private Photon Cloud for banned players. Fetches AppId and the shared room codes from https://gtag.useless.best/v1/api/iiservers (no credentials needed). Everyone connects to the same code, and to the next one when it is full. OFF restores official - no restart needed.
+- **Join Menu Room** — *Action.* Connects you to a room that is exclusive to ii's <b>Stupid</b> Menu users.
 - **Bypass Join Room Type** — Bypasses the immediate disconnection when trying to join a room that is in another map.
 - **Auto Join Room** — *Action.* Automatically attempts to connect to whatever room you desire every couple of seconds until connected.
 - **Auto Join Room "TJA"** — *Action.* Automatically attempts to connect to room "RUN" every couple of seconds until connected
@@ -461,19 +478,23 @@ after the dash is the in-menu tooltip.
 - **Anti Content Creator** — When a content creator joins, you get disconnected and their player ID and room code gets saved to a file.
 - **Cosmetic Notifications** — Sends you a notification if there is a Finger Painter, Illustrator, Administrator, Stick, Forest Guide, or Another Axiom Creator in your room.
 - **Steam Detector** — Detects when a player in your room is on Steam.
+- **Anti Report [Disconnect]** — Disconnects you from the room when anyone comes near your report button.
+- **Anti Report [Reconnect]** — Disconnects and rejoins the room when anyone comes near your report button.
+- **Anti Report [Join Random]** — Disconnects and joins a random new room when anyone comes near your report button.
+- **Anti Report [Notify]** — Notifies you when anyone comes near your report button, without disconnecting you.
+- **Anti Report [Overlay]** — Shows a persistent overlay naming who is near your report button.
+- **Anti Report [Oculus]** — Disconnects you when you get reported with the Oculus report menu.
 - **Bypass Automod** — Attempts to bypass automod muting yourself and others.
 - **Bypass Mod Checkers** — Tells players using mod checkers that you have no mods.
 - **Bypass Cosmetic Check** — Turns off the networking for any cosmetic mods, stopping people from seeing if you're using one.
 - **Anti Predictions** — Prevents people from checking if your predictions are too high.
-- **Anti Report [Disconnect]** — Disconnects you from the room when anyone comes near your report button.
-- **Anti Report [Reconnect]** — Disconnects and reconnects you from the room when anyone comes near your report button.
-- **Anti Report [Join Random]** — Connects you to a random the room when anyone comes near your report button.
-- **Anti Report [Oculus]** — Disconnects you from the room when you get reported with the Oculus report menu.
-- **Anti Report [Anti Cheat]** — Disconnects you from the room when you get reported by the anti cheat.
-- **Anti Report [Notify]** — Tells you when people come near your report button, but doesn't do anything.
-- **Anti Report [Overlay]** — Shows you an overlay when people come near your report button, but doesn't do anything.
 - **Show Anti Cheat Reports [Self]** — Gives you a notification every time you have been reported by the anti cheat.
 - **Show Anti Cheat Reports [All]** — Gives you a notification every time anyone has been reported by the anti cheat.
+- **Panic Button** — Disables all mods, closes the menu, resets your identity and flushes RPCs. Tap again to restore your previous mods.
+- **Watchdog Auto-Leave** — Automatically disconnects whenever a player on your watchlist joins or is in the room.
+- **Watchdog Mark All** — *Action.* Adds everyone currently in the room to the Watchdog watchlist.
+- **Watchdog Clear** — *Action.* Clears the Watchdog watchlist file.
+- **Mic Safety Gate** — Mutes your microphone whenever someone can reach your report button, un-mutes when clear.
 - **Change Identity** — *Action.* Changes your name and color to something a new player would have.
 - **Change Identity [Normal]** — *Action.* Changes your name and color to something a regular player would have.
 - **Change Identity [Custom]** — *Action.* Changes your name and color to whatever you desire.
@@ -862,9 +883,6 @@ after the dash is the in-menu tooltip.
 - **Mute All** — Mutes everyone in the room.
 - **Report Gun** — Reports whoever your hand desires for cheating.
 - **Report All** — *Action.* Reports everyone in the room for cheating.
-- **Trigger Anti Report Gun** — Triggers whoever your hand desires' anti report if enabled.
-- **Trigger Anti Report All** — Triggers everyone in the room's anti report if enabled.
-- **Bypass Anti Report** — Bypasses anti report mods when reporting players.
 - **Break Mod Checkers** — Tells players using mod checkers that you have every mod possible.
 - **Custom Mod Spoofer** — *Action.* Make mod checkers see only what you allow.
 - **Mute DJ Sets** — Mutes every DJ set so you don't have to hear the worst music known to man.
@@ -1398,7 +1416,6 @@ after the dash is the in-menu tooltip.
 - **Snowball Fling Player Towards Gun** — Flings whoever your hand desires towards you.
 - **Snowball Fling Player Away Gun** — Flings whoever your hand desires away from you.
 - **Snowball Launch Gun** — Launches whoever your hand desires like a launch pad.
-- **Anti Report [Snowball Fling]** — Flings whoever tries to report you with the snowballs.
 - **Exit Master Mods** — *Action.* Returns you back to the main page.
 - **MasterLabel**
 - **Guardian Self** — *Action.* Makes you red.
@@ -1471,7 +1488,6 @@ after the dash is the in-menu tooltip.
 - **Shotgun [G]** — Spawns you a shotgun when you press grip.
 - **Block Crash Gun** — Crashes whoever your hand desires if they are inside of the block map.
 - **Block Crash All [T]** — Crashes everybody inside of the block map.
-- **Block Anti Report** — Automatically builds blocks around your report button.
 - **Block Draw Gun** — Draw wherever your hand desires.
 - **Block Build Gun** — Draw wherever your hand desires with no delay.
 - **Block Tower Gun** — Builds a tower wherever your hand desires.
@@ -1590,7 +1606,6 @@ after the dash is the in-menu tooltip.
 - **Freeze Server** — Freezes the room.
 - **Crash Server** — Crashes the room.
 - **Za Warudo [T]** — Freeze all, but with special effects.
-- **Anti Report [Fling]** — Flings whoever tries to report you.
 - **Lag Gun** — Lags whoever your hand desires.
 - **Lag All** — Lags everyone in the room.
 - **Lag Aura** — Lags players nearby.
@@ -1598,7 +1613,6 @@ after the dash is the in-menu tooltip.
 - **Server Mute All** — Mutes everyone in the server.
 - **Deafen Gun** — Makes whoever your hand deseries not be able to hear anyone else.
 - **Deafen All** — Makes everyone not be able to hear anyone except you.
-- **Anti Report [Lag]** — Lags whoever tries to report you.
 - **Barrel Punch Mod** — Flings people when you punch them.
 - **Barrel Fling Gun** — Flings whoever your hand desires using the barrels.
 - **Barrel Fling All** — Flings everyone in the room using the barrels.
@@ -1714,13 +1728,19 @@ after the dash is the in-menu tooltip.
 - **Replay Tutorial** — *Action.* Replays the tutorial video.
 - **Disorganize Menu** — *Action.* Disorganizes the entire menu. This cannot be undone.
 - **Exit Safety Settings** — *Action.* Returns you back to the settings menu.
-- **Change Anti Report Distance** — *Action.* Changes the distance threshold for the anti report mods.
 - **Change FPS Spoof Value** — *Action.* Changes the target FPS for the FPS Spoof mod.
 - **Change Ping Spoof Value** — *Action.* Changes the target ping for the Ping Spoof mod.
+- **Change Anti Report Distance** — *Action.* Changes the distance threshold for the anti report mods.
 - **Hide Anti Cheat Report Reasons** — Hides the reason for Show Anti Cheat Reports.
 - **Visualize Anti Report** — Visualizes the distance threshold for the anti report mods.
-- **Smart Anti Report** — Makes the anti report mods only activate in non-modded public lobbies.
+- **Smart Anti Report** — Only reacts to an actual press on the report button instead of a hand hovering near it. Set how close a press has to be below.
 - **Anti Mute** — Includes the mute button with the anti report mods.
+- **Change Anti Report Press Distance** — *Action.* How close a hand has to be before Smart Anti Report treats it as an actual report press.
+- **Change Watchdog Interval** — *Action.* How often Watchdog Auto-Leave checks the room against your watchlist.
+- **Reload Watchlist** — *Action.* Re-reads Watchlist.txt without rejoining the room.
+- **Open Watchlist Folder** — *Action.* Opens the folder that holds Watchlist.txt.
+- **Change Mic Gate Hold Time** — *Action.* How long the mic stays muted after the last player leaves your report button.
+- **Visualize Anti Report Press Radius** — Shows the press radius Smart Anti Report uses as a yellow aura.
 - **Exit Soundboard Settings** — *Action.* Returns you back to the settings menu.
 - **Soundboard Local Volume** — *Action.* How loud the soundboard is to your ears (local preview). 0-200%.
 - **Soundboard Mic Volume** — *Action.* How loud the soundboard is through your microphone to others. 0-200%.
@@ -1779,8 +1799,12 @@ after the dash is the in-menu tooltip.
 - **Entity Gravity** — Gives gravity to any spawned entities in the ghost reactor or Super Infection gamemode.
 - **Tinnitus Self** — Be able to hear the loud beep the menu creates with this mod on. God save your ears.
 - **Exit Players** — *Action.* Returns you back to the main page.
+- **Render All Users** — *Action.* Gives every player in the room a rig right now and makes sure it is active and rendering.
+- **Disable User Rendering** — Stops the menu from keeping players rendered in the background. Gorilla Tag can leave people invisible without it.
+- **User Rendering Report** — *Action.* Writes every player, their user id, and their rig state to the BepInEx log, to work out who is invisible and why.
 - **Exit Credits** — *Action.* Returns you back to the main page.
-- **Old Devs** — *Action.* The original developers of ii's Stupid Menu.
+- **Old Devs** — *Action.* The original developers of ii's <b>Stupid</b> Menu.
+- **Zlothy** — *Action.* Disc design and deployment inspiration: github.com/gorillan0t/Sentinel/blob/master/Sentinel/Disc.cs
 - **Useless** — *Action.* Useless — discord.gg/iidk
 - **GPL v3** — *Action.* The GNU General Public License Version 3 is the license that my menu uses. It proveides a "free, copyleft license for software and other kinds of works."
 - **Exit Custom Maps** — *Action.* Returns you back to the fun mods.
@@ -1876,6 +1900,17 @@ after the dash is the in-menu tooltip.
 - **Public Room Guard** — Automatically disables all enabled detected mods when you join a public room.
 - **Exit Achievements** — *Action.* Returns you back to the main page.
 - **Exit Mod List** — *Action.* Returns you back to the main page.
+- **Exit External Mods** — *Action.* Returns you back to the main page.
+- **Restart Gorilla Tag** — *Action.* At the top as requested. Restarts Gorilla Tag so newly installed external mods load.
+- **Install Utilla** — *Action.* Installs the latest Utilla from GitHub (iireborn/Utilla) to BepInEx/plugins. Then restart.
+- **Install WalkSim Fixed** — *Action.* Installs the latest Walksim-Fixed from GitHub (iireborn/Walksim-Fixed) to BepInEx/plugins. Then restart.
+- **Install TooMuchInfo** — *Action.* Installs the latest TooMuchInfo from GitHub (iireborn/TooMuchInfo) to BepInEx/plugins. Then restart.
+- **Install LibrePad Updated** — *Action.* Installs the latest LibrePad-Updated from GitHub (iireborn/LibrePad-Updated) to BepInEx/plugins. Then restart.
+- **Open Plugins Folder** — *Action.* Opens BepInEx/plugins in Explorer.
+- **Exit iiServers** — *Action.* Back to Room Mods.
+- **Connect to iiServers** — Live swap to private Photon Cloud. ON fetches AppId/AppVersion/Region/room codes from https://gtag.useless.best/v1/api/iiservers -> disconnects official -> reconnects -> joins the shared code list, moving on whenever a code is full. OFF restores official - no restart needed. Bypasses PlayFab bans.
+- **iiServers Status** — *Action.* Shows iiServers vs official and the room you are in. Connect already joins the shared room codes for you.
+- **Refresh iiServers Config** — *Action.* Re-fetches AppId/Version from API.
 
 ## Settings
 
@@ -2045,6 +2080,14 @@ _Built at runtime — see [Runtime-built features](#runtime-built-features)._
 
 _Built at runtime — see [Runtime-built features](#runtime-built-features)._
 
+## External Mods
+
+_Built at runtime — see [Runtime-built features](#runtime-built-features)._
+
+## iiServers
+
+_Built at runtime — see [Runtime-built features](#runtime-built-features)._
+
 ---
 
 ## Runtime-built features
@@ -2067,17 +2110,34 @@ sound library.
 - **Exit Plugin Library** — *Action.* Returns you back to the plugin settings.
 - **PluginDownload** — *Action.*
 
+### Managers/ExternalModsManager.cs
+
+- **Exit External Mods** — *Action.* Back to main.
+- **Restart Gorilla Tag** — *Action.* Restarts Gorilla Tag so newly installed mods load. Required after installing.
+- **Open Plugins Folder** — *Action.* Opens BepInEx/plugins in Explorer.
+- **Refresh List** — *Action.* Refreshes installed status.
+
+### Managers/IiServersManager.cs
+
+- **Exit iiServers** — *Action.* Back to Room Mods.
+- **Connect to iiServers** — Live swap to the private Photon Cloud. Enabling fetches the AppId, AppVersion, region and room codes from the iiServers API, falls back to iiServers.json and then to the built-in defaults, disconnects the official cloud, reconnects, and joins the shared codes, moving to the next one whenever a code is full. Disabling restores the official AppId and reconnects. No restart needed, and it bypasses PlayFab bans.
+- **iiServers Status** — *Action.* Rebuilds the page and shows the live cloud (AppId, region, Photon server), the room you are in with its player count, and the MOTD with the shared room codes.
+- **Refresh iiServers Config** — *Action.* Re-fetches the AppId, AppVersion, region and room codes from the API without reconnecting, and reports what came back.
+
 ### Mods/Fun.cs
 
 - **Exit Mod List** — *Action.* Returns you back to the main page.
 - **Exit Building Block Browser** — *Action.* Returns you back to the fun mods.
 - **Exit Cosmetic Browser** — *Action.* Returns you back to the fun mods.
+- **Previous Page** — *Action.* Takes you to the previous page.
+- **Next Page** — *Action.* Takes you to the previous page.
 
 ### Mods/Movement.cs
 
 - **Exit Macros** — *Action.* Returns you back to the movement mods.
+- **No Macros Found**
 - **Record [T]** — Record your macros with your left trigger.
-- **Open Macros Folder** — *Action.* Opens the folder in which your plugins are located.
+- **Open Macros Folder** — *Action.* Opens the folder your macros are saved in.
 - **Reload Macros** — *Action.* Reloads your macros.
 - **Disable Macros** — Disables all macros.
 - **Exit Teleport to Map** — *Action.* Returns you back to the movement mods.
@@ -2239,7 +2299,6 @@ sound library.
 - **Infinite Ammo** — Gives you an infinite amount of ammo.
 - **Chimp Combat Crash Gun** — Crashes whoever your hand desires in the custom map.
 - **Chimp Combat Crash All** — *Action.* Crashes everyone in the custom map.
-- **Chimp Combat Anti Report** — Crashes everyone who tries to report you.
 - **Chimp Combat Crash Aura** — Crashes players nearby you in the custom map.
 - **Chimp Combat Crash On Touch** — Crashes whoever you touch in the custom map.
 - **Chimp Combat Crash When Touched** — Crashes whoever touches you in the custom map.
@@ -2267,7 +2326,6 @@ sound library.
 - **Spawn Lucy All** — *Action.* Spawns lucy on everyone in the room.
 - **Monke Magic Crash Gun** — Crashes whoever your hand desires in the custom map.
 - **Monke Magic Crash All** — *Action.* Crashes everyone in the custom map.
-- **Monke Magic Anti Report** — Crashes everyone who tries to report you.
 - **Monke Magic Crash Aura** — Crashes players nearby you in the custom map.
 - **Monke Magic Crash On Touch** — Crashes whoever you touch in the custom map.
 - **Monke Magic Crash When Touched** — Crashes whoever touches you in the custom map.
