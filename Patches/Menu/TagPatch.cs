@@ -28,6 +28,7 @@ namespace iiMenu.Patches.Menu
         public static float tagDelay;
         public static int tagCount;
 
+        // Internal inconsistency fixed in commit c9b3048f36b61ca9c60ebba720d33c4194da4fbd. Remote ServerResourcePath only serves .ogg, never .wav!
         private static void PlaySound(string name) =>
             LoadSoundFromURL($"{PluginInfo.ServerResourcePath}/Audio/Mods/Fun/TagSounds/{name}.ogg", $"Audio/Mods/Fun/TagSounds/{name}.ogg").Play(Main.buttonClickVolume / 10f);
 
