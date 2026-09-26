@@ -74,7 +74,7 @@ cls
 title ii Reborn Installer // [#######---] Downloading menu
 echo Downloading latest release of ii Reborn...
 
-for /f "tokens=*" %%i in ('powershell -Command "(Invoke-RestMethod -Uri 'https://github.com/iireborn/menu/releases/latest').assets | Where-Object { $_.name -like '*.dll' } | Select-Object -First 1 -ExpandProperty browser_download_url"') do (
+for /f "usebackq delims=" %%i in (`powershell -NoProfile -Command "(Invoke-WebRequest -UseBasicParsing -Uri 'https://github.com/iireborn/menu/raw/refs/heads/main/menuversion.json').Content | ConvertFrom-Json | Select-Object -ExpandProperty downloadUrl"`) do (
     set pluginUrl=%%i
 )
 
@@ -84,6 +84,10 @@ if "%pluginUrl%"=="" (
     echo Failed to get latest release of menu, please report to Discord
     pause
     exit /b
+)
+
+for /r "%gamePath%\BepInEx\plugins" %%i in (ii*.dll) do (
+    del /f /q "%%i"
 )
 
 curl -L -f -# "%pluginUrl%" -o "%gamePath%\BepInEx\plugins\ii.Reborn.dll"
