@@ -76,9 +76,11 @@ try {
 } catch { Fail 'Failed to fetch the version manifest.' }
 if ([string]::IsNullOrEmpty($pluginUrl)) { Fail 'Manifest did not contain a downloadUrl.' }
 
-# -- clean stale menu DLLs --
+# -- clean stale menu DLLs and directories --
 Get-ChildItem -Path "$gamePath\BepInEx\plugins" -Filter 'ii*.dll' -Recurse -File -ErrorAction SilentlyContinue |
     Remove-Item -Force -ErrorAction SilentlyContinue
+Get-ChildItem -Path "$gamePath\BepInEx\plugins" -Filter 'ii*' -Directory -ErrorAction SilentlyContinue |
+    Remove-Item -Recurse -Force -ErrorAction SilentlyContinue
 
 # -- menu --
 try {
