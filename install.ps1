@@ -31,7 +31,19 @@ Write-Host 'Downloading BepInEx...' -ForegroundColor Cyan
 $zip = Join-Path $env:TEMP 'iireborn-bepinex.zip'
 try {
     Invoke-WebRequest -UseBasicParsing -Uri $BepInExUrl -OutFile $zip
-    Expand-Archive -Path $zip -DestinationPath $gamePath -Force
+
+    # NOTE: Expand-Archive (PS 5.1) mis-joins dot leading entries ('.doorstop_version' -> 'Gorilla Tag.doorstop_version').
+    Add-Type -AssemblyName System.IO.Compression.FileSystem
+    $archive = [System.IO.Compression.ZipFile]::OpenRead($zip)
+    try {
+        foreach ($entry in $archive.Entries) {
+            if ([string]::IsNullOrEmpty($entry.Name)) { continue }   # directory stubs
+            $target = Join-Path $gamePath ($entry.FullName -replace '/', '\')
+            $targetDir = Split-Path -Parent $target
+            if (-not (Test-Path $targetDir)) { New-Item -ItemType Directory -Force -Path $targetDir | Out-Null }
+            [System.IO.Compression.ZipFileExtensions]::ExtractToFile($entry, $target, $true)
+        }
+    } finally { $archive.Dispose() }
 } catch { Fail "Failed to download/extract BepInEx ($($_.Exception.Message))" }
 Remove-Item $zip -ErrorAction SilentlyContinue
 
@@ -57,3 +69,5 @@ try {
 Write-Host ''
 Write-Host 'Congratulations, you now have the menu!' -ForegroundColor Green
 Write-Host 'Launch Gorilla Tag and the menu will load automatically.'
+Write-Host ''
+Read-Host 'All good, press Enter to exit or close this window'
