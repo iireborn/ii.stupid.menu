@@ -4,6 +4,7 @@ try { [Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::S
 
 $ManifestUrl = 'https://github.com/iireborn/menu/raw/refs/heads/main/menuversion.json'
 $BepInExUrl  = 'https://github.com/BepInEx/BepInEx/releases/download/v5.4.23.4/BepInEx_win_x64_5.4.23.4.zip'
+$ScriptUrl   = 'https://github.com/iireborn/menu/raw/refs/heads/main/install.ps1'
 
 function Fail($msg) { Write-Host "`n$msg" -ForegroundColor Red; Read-Host 'Press Enter to exit'; exit 1 }
 
@@ -50,7 +51,19 @@ try {
             [System.IO.Compression.ZipFileExtensions]::ExtractToFile($entry, $target, $true)
         }
     } finally { $archive.Dispose() }
-} catch { Fail "Failed to download/extract BepInEx ($($_.Exception.Message))" }
+} catch {
+    # extraction failed (typically write access denied) -> one elevated retry
+    if ($env:IIREBORN_ELEVATED -eq '1') { Fail "Failed to download/extract BepInEx ($($_.Exception.Message))" }
+    Write-Host "BepInEx step failed: $($_.Exception.Message)" -ForegroundColor Yellow
+    Write-Host 'Relaunching as administrator - accept the UAC prompt!!!' -ForegroundColor Yellow
+    $child = '-NoProfile -Command "$env:IIREBORN_ELEVATED=''1''; irm ''' + $ScriptUrl + ''' | iex"'
+    try {
+        Start-Process powershell -Verb RunAs -ArgumentList $child
+    } catch {
+        Fail 'Administrator access was declined. Re-run the installer and accept the UAC prompt.'
+    }
+    exit
+}
 Remove-Item $zip -ErrorAction SilentlyContinue
 
 New-Item -ItemType Directory -Force -Path "$gamePath\BepInEx\config", "$gamePath\BepInEx\plugins" | Out-Null
