@@ -24,14 +24,17 @@ fsa fuow fsuosaj class class class internal !!=>! // === !!! REMOVE THIS LINE EN
 // - ii Engine needs to be audited whether any regressions have been introduced, and remap all GitHub paths to iireborn/menu.
 // - Base config directory has been renamed to "iiReborn". KEEP THIS IN MIND. "iisStupidMenu" now goes through a one-time migration (renaming) process to avoid losing user configurations.
 //   ANY OTHER EXTERNAL SOFTWARE THAT DEPENDS ON "iisStupidMenu" AS A CONFIGURATION PATH NEEDS TO BE UPDATED PRIOR TO PUBLISHING THIS UPDATE!
-
+// - STOP using cdn.useless.best (or any useless.best) for any non-API work i.e. downloads of https://cdn.useless.best/install.bat.
+//   MODIFY the bot source code to point immediately at https://github.com/iireborn/menu/blob/main/install.bat (raw immediate download: https://github.com/iireborn/menu/raw/refs/heads/main/install.bat)
+//   This link is always stable and requires no redundant mirror syncing. Don't be silly.
+    
 // FOR THE ONE WHO HAS ACCESS TO THE DISCORD DEVELOPERS ACCOUNT HOSTING ALL BOTS: ensure the logo/avatar/profile-picture uses no artwork belonging to Goldentrophy Software!
 
 // ---
 
 // Line 9 purposely contains invalid syntax for this file to generate a compilation error. 
 // This is to bring your attention to this disclaimer. Please read it very thoroughly.
-// Afterwards, this entire block, starting from line 9, and ending with line 35, can be deleted, along with the comment on line 43.
+// Afterwards, this entire block, starting from line 9, and ending with line 38, can be deleted, along with the comment on line 43.
 // - @corgisolutions; contact if any confusion
 
 namespace iiMenu
