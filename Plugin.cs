@@ -44,7 +44,7 @@ namespace iiMenu
 
                 if (Directory.Exists(PluginInfo.BaseDirectory))
                 {
-                    LogManager.Log($"[Migrate] Both '{PluginInfo.LegacyBaseDirectory}' and '{PluginInfo.BaseDirectory}' exist — leaving both untouched (no merge).");
+                    LogManager.Log($"[Migrate] Both '{PluginInfo.LegacyBaseDirectory}' and '{PluginInfo.BaseDirectory}' exist.");
                     return;
                 }
 
