@@ -36,7 +36,8 @@ namespace iiMenu.Classes.Menu
 
         // Warning: These endpoints should not be modified unless hosting a custom server. Use with caution.
         public const string ServerEndpoint = "https://gtag.useless.best/v1/api"; // Beacon / reportban / telemetry / syncdata
-        public static readonly string MenuVersionEndpoint = $"{ServerEndpoint}/menuversion"; // Version + DLL hash of the current release
+        public static readonly string MenuVersionEndpoint = "https://github.com/iireborn/menu/raw/refs/heads/main/menuversion.json"; // Version + DLL hash of the current release
+        // TODO: verify new menu version endpoint is functional. remove this comment when done. if you're reading this a week later and this is still there, draw some damn conclusions
         public const string ConfigEndpoint = ServerEndpoint;
         public static readonly string ServerDataEndpoint = $"{ConfigEndpoint}/serverdata.json";
         #endregion
