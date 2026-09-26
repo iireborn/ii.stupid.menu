@@ -1,5 +1,5 @@
 /*
- * ii's Stupid Menu (Reborn)
+ * ii Reborn
  * Portions Copyright (C) 2025–2026 Goldentrophy Software
  * Licensed under GNU GPL v3.0-or-later — see LICENSE and NOTICE.
  * This file is part of a derivative work; see NOTICE for attribution
@@ -523,7 +523,7 @@ namespace iiMenu.Mods
                         catch { LogManager.Log("Failed to log player"); }
 
                         text += "\n====================================\n";
-                        text += "Text file generated with ii's Stupid Menu";
+                        text += "Text file generated with ii Reborn";
                         string fileName = $"{PluginInfo.BaseDirectory}/" + player.NickName + " - Anti Moderator.txt";
 
                         File.WriteAllText(fileName, text);
@@ -565,7 +565,7 @@ namespace iiMenu.Mods
                         catch { LogManager.Log("Failed to log player"); }
 
                         text += "\n====================================\n";
-                        text += "Text file generated with ii's Stupid Menu";
+                        text += "Text file generated with ii Reborn";
                         string fileName = $"{PluginInfo.BaseDirectory}/" + player.NickName + " - Anti Content Creator.txt";
 
                         File.WriteAllText(fileName, text);

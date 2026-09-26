@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <AssemblyName>ii's Stupid Menu</AssemblyName>
+    <AssemblyName>ii.Reborn</AssemblyName>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
 
     <TargetFramework>netstandard2.1</TargetFramework>

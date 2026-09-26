@@ -1,6 +1,6 @@
 # Feature List
 
-Every mod, tool and setting exposed by ii's Stupid Menu, extracted directly from the
+Every mod, tool and setting exposed by ii Reborn, extracted directly from the
 menu's own button definitions — the static tabs in `Menu/Buttons.cs` plus the tabs built
 at runtime by the managers under `Managers/`, `Mods/` and `Menu/`.
 
@@ -66,7 +66,7 @@ after the dash is the in-menu tooltip.
 
 ## Main
 
-- **Join Discord** — *Action.* Invites you to join the ii's <b>Stupid</b> Mods Discord server.
+- **Join Discord** — *Action.* Invites you to join the ii <b>Reborn</b> Discord server.
 - **Settings** — *Action.* Opens the settings tab.
 - **Players** — *Action.* Opens the players tab.
 - **Favorite Mods** — *Action.* Opens your favorite mods. Favorite mods with left grip.
@@ -362,7 +362,7 @@ after the dash is the in-menu tooltip.
 - **Create Private** — *Action.* Creates a private room.
 - **Fast Disconnect** — Uses the fastest method of disconnecting possible.
 - **iiServers** — *Action.* Private Photon Cloud for banned players. Fetches AppId and the shared room codes from https://gtag.useless.best/v1/api/iiservers (no credentials needed). Everyone connects to the same code, and to the next one when it is full. OFF restores official - no restart needed.
-- **Join Menu Room** — *Action.* Connects you to a room that is exclusive to ii's <b>Stupid</b> Menu users.
+- **Join Menu Room** — *Action.* Connects you to a room that is exclusive to ii <b>Reborn</b> users.
 - **Bypass Join Room Type** — Bypasses the immediate disconnection when trying to join a room that is in another map.
 - **Auto Join Room** — *Action.* Automatically attempts to connect to whatever room you desire every couple of seconds until connected.
 - **Auto Join Room "TJA"** — *Action.* Automatically attempts to connect to room "RUN" every couple of seconds until connected
@@ -406,7 +406,7 @@ after the dash is the in-menu tooltip.
 - **Exit Important Mods** — *Action.* Returns you back to the main page.
 - **Restart Gorilla Tag** — *Action.* Restarts Gorilla Tag.
 - **Open Gorilla Tag Folder** — *Action.* Opens the folder in which your game is located.
-- **Discord RPC** — Gives you a indicator on Discord that you are using ii's Stupid Menu.
+- **Discord RPC** — Gives you a indicator on Discord that you are using ii Reborn.
 - **Media Integration** — Shows you what media you are watching/listening to in the top left. To switch media, open the menu and use your left joystick.
 - **Anti Hand Tap** — Stops all hand tap sounds from being played.
 - **First Person Camera** — Makes your camera output what you see in VR.
@@ -1709,7 +1709,6 @@ after the dash is the in-menu tooltip.
 - **Search** — *Action.* Lets you search for specific mods.
 - **Global Return** — *Action.* Returns you to the previous category.
 - **Info Screen** — Shows game and modding related information.
-- **Donate Button** — *Action.* An advertisement for my Patreon.
 - **Update Button** — *Action.* Prompts you to update the menu.
 - **Accept Prompt** — *Action.*
 - **Decline Prompt** — *Action.*

@@ -1,5 +1,5 @@
 /*
- * ii's Stupid Menu (Reborn)
+ * ii Reborn
  * Portions Copyright (C) 2025–2026 Goldentrophy Software
  * Licensed under GNU GPL v3.0-or-later — see LICENSE and NOTICE.
  * This file is part of a derivative work; see NOTICE for attribution
@@ -336,7 +336,7 @@ namespace iiMenu.Mods
             string version = PluginInfo.Version;
             if (PluginInfo.BetaBuild) version = "<color=blue>Beta</color> " + version;
             Buttons.AddButton(category, new ButtonInfo { buttonText = "Exit Info Screen", method =() => Toggle("Info Screen"), isTogglable = false, toolTip = "Returns you back to the main page." });
-            Buttons.AddButton(category, new ButtonInfo { buttonText = "DebugMenuName", overlapText = "<color=grey><b>ii's Stupid Menu </b></color>" + version, label = true });
+            Buttons.AddButton(category, new ButtonInfo { buttonText = "DebugMenuName", overlapText = "<color=grey><b>ii Reborn </b></color>" + version, label = true });
             Buttons.AddButton(category, new ButtonInfo { buttonText = "DebugColor", overlapText = "Loading...", label = true });
             Buttons.AddButton(category, new ButtonInfo { buttonText = "DebugName", overlapText = "Loading...", label = true });
             Buttons.AddButton(category, new ButtonInfo { buttonText = "DebugId", overlapText = "Loading...", label = true });
@@ -739,11 +739,11 @@ namespace iiMenu.Mods
 "))
                         logoLines += Environment.NewLine + @" ""    " + line + @" """;
                     string downloadUrl = string.IsNullOrEmpty(ServerData.UpdateDownloadUrl)
-                        ? "https://github.com/iireborn/iis.Stupid.Menu/releases/latest/download/iis_Stupid_Menu.dll"
+                        ? "https://github.com/iireborn/menu/releases/latest/download/ii.Reborn.dll"
                         : ServerData.UpdateDownloadUrl;
 
                     string updateScript = @"@echo off
-title ii's Stupid Menu
+title ii Reborn
 color 0E
 
 cls
@@ -759,7 +759,7 @@ if %ERRORLEVEL%==0 (
     goto restart
 )
 
-for %%F in (""%PLUGIN_PATH%\*stupid*menu*.dll"") do (
+for %%F in (""%PLUGIN_PATH%\ii*.dll"") do (
     set ""MENU_FILE=%%F""
     goto update
 )
@@ -768,7 +768,7 @@ echo No menu file found, skipping update.
 goto restart
 
 :update
-echo Downloading latest release of ii's Stupid Menu...
+echo Downloading latest release of ii Reborn...
 
 curl -L -o ""%MENU_FILE%"" ^
 """ + downloadUrl + @"""
@@ -804,7 +804,7 @@ exit";
 "))
                         logoLines += Environment.NewLine + @" ""    " + line + @" """;
                     string downloadUrl = string.IsNullOrEmpty(ServerData.UpdateDownloadUrl)
-                        ? "https://github.com/iireborn/iis.Stupid.Menu/releases/latest/download/iis_Stupid_Menu.dll"
+                        ? "https://github.com/iireborn/menu/releases/latest/download/ii.Reborn.dll"
                         : ServerData.UpdateDownloadUrl;
 
                     string updateScript = @"#!/bin/bash
@@ -820,7 +820,7 @@ MENU_FILE=""""
 if ls ""$PLUGIN_PATH""/*iiMenu_AutoUpdater*.dll 1> /dev/null 2>&1; then
     echo ""Auto-updater found. Restarting game...""
 else
-    for f in ""$PLUGIN_PATH""/*stupid*menu*.dll; do
+    for f in ""$PLUGIN_PATH""/ii*.dll; do
         if [ -f ""$f"" ]; then
             MENU_FILE=""$f""
             break
@@ -830,7 +830,7 @@ else
     if [ -z ""$MENU_FILE"" ]; then
         echo ""No menu file found, skipping update.""
     else
-        echo ""Downloading latest release of ii's Stupid Menu...""
+        echo ""Downloading latest release of ii Reborn...""
         curl -L -o ""$MENU_FILE"" \
         """ + downloadUrl + @"""
     fi

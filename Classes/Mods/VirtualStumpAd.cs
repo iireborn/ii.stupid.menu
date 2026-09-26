@@ -1,5 +1,5 @@
 ﻿/*
- * ii's Stupid Menu (Reborn)
+ * ii Reborn
  * Portions Copyright (C) 2025–2026 Goldentrophy Software
  * Licensed under GNU GPL v3.0-or-later — see LICENSE and NOTICE.
  * This file is part of a derivative work; see NOTICE for attribution
@@ -94,7 +94,7 @@ namespace iiMenu.Classes.Mods
                 if (featuredMapText != null)
                 {
                     oldText              = featuredMapText.text;
-                    featuredMapText.text = "<b><color=#FF8000>ii's Stupid Menu</color></b>";
+                    featuredMapText.text = "<b><color=#FF8000>ii Reborn</color></b>";
                     MapInfoText.SetActive(true);
                 }
 

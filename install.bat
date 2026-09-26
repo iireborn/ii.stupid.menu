@@ -2,7 +2,7 @@
 setlocal enabledelayedexpansion
 chcp 65001 >nul 2>&1
 
-title ii's Stupid Menu Installer // [#---------] Getting directory
+title ii Reborn Installer // [#---------] Getting directory
 color 0e
 
 set "steamPath1=C:\Program Files (x86)\Steam\steamapps\common\Gorilla Tag"
@@ -39,7 +39,7 @@ if not exist "!gamePath!" (
 :gotpath
 color 0e
 cls
-title ii's Stupid Menu Installer // [###-------] Downloading BepInEx
+title ii Reborn Installer // [###-------] Downloading BepInEx
 
 echo.
 echo   ████████ ██  █████  █████████   ███████████   █   ██████ █  █
@@ -48,8 +48,8 @@ echo    ██   ██  █ █    █ ████ ██    ████ █�
 echo    ██   ██  █ █    █ █    ██    █    ██   █  █  █   █ █    █  █
 echo   ████████   █ █████ ████ ██████ ████ ██████  █ █   ██████ █  █
 echo.
-echo        ii's Stupid Menu - Installer
-echo        github.com/iireborn/ii.Stupid.Menu
+echo        ii Reborn - Installer
+echo        github.com/iireborn/menu
 echo.
 
 curl -L -f -# "https://github.com/BepInEx/BepInEx/releases/download/v5.4.23.4/BepInEx_win_x64_5.4.23.4.zip" -o BPNX54234.zip
@@ -65,16 +65,16 @@ if errorlevel 1 (
 powershell -command "Expand-Archive -Path 'BPNX54234.zip' -DestinationPath '%gamePath%' -Force"
 
 cls
-title ii's Stupid Menu Installer // [####------] Creating directories
+title ii Reborn Installer // [####------] Creating directories
 echo Creating BepInEx directories...
 if not exist "%gamePath%\BepInEx\config" mkdir "%gamePath%\BepInEx\config"
 if not exist "%gamePath%\BepInEx\plugins" mkdir "%gamePath%\BepInEx\plugins"
 
 cls
-title ii's Stupid Menu Installer // [#######---] Downloading menu
-echo Downloading latest release of ii's Stupid Menu...
+title ii Reborn Installer // [#######---] Downloading menu
+echo Downloading latest release of ii Reborn...
 
-for /f "tokens=*" %%i in ('powershell -Command "(Invoke-RestMethod -Uri 'https://github.com/iireborn/ii.stupid.menu/releases/latest').assets | Where-Object { $_.name -like '*.dll' } | Select-Object -First 1 -ExpandProperty browser_download_url"') do (
+for /f "tokens=*" %%i in ('powershell -Command "(Invoke-RestMethod -Uri 'https://github.com/iireborn/menu/releases/latest').assets | Where-Object { $_.name -like '*.dll' } | Select-Object -First 1 -ExpandProperty browser_download_url"') do (
     set pluginUrl=%%i
 )
 
@@ -86,7 +86,7 @@ if "%pluginUrl%"=="" (
     exit /b
 )
 
-curl -L -f -# "%pluginUrl%" -o "%gamePath%\BepInEx\plugins\ii.s.Stupid.Menu.dll"
+curl -L -f -# "%pluginUrl%" -o "%gamePath%\BepInEx\plugins\ii.Reborn.dll"
 
 if errorlevel 1 (
     color 0c
@@ -97,7 +97,7 @@ if errorlevel 1 (
 )
 
 cls
-title ii's Stupid Menu Installer // [##########] Finished
+title ii Reborn Installer // [##########] Finished
 
 echo.
 echo   ████████ ██  █████  █████████   ███████████   █   ██████ █  █
@@ -106,7 +106,7 @@ echo    ██   ██  █ █    █ ████ ██    ████ █�
 echo    ██   ██  █ █    █ █    ██    █    ██   █  █  █   █ █    █  █
 echo   ████████   █ █████ ████ ██████ ████ ██████  █ █   ██████ █  █
 echo.
-echo        ii's Stupid Menu - Installer
+echo        ii Reborn - Installer
 echo.
 
 echo Congratulations, you now have the menu!

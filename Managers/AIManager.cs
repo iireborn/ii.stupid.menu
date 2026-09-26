@@ -1,5 +1,5 @@
 /*
- * ii's Stupid Menu (Reborn)
+ * ii Reborn
  * Portions Copyright (C) 2025–2026 Goldentrophy Software
  * Licensed under GNU GPL v3.0-or-later — see LICENSE and NOTICE.
  * This file is part of a derivative work; see NOTICE for attribution
@@ -29,8 +29,8 @@ namespace iiMenu.Managers
         MENU VERSION: {2}
         MOD COUNT: {0}
 
-        You are SYSTEM, the built-in voice assistant of a Gorilla Tag mod menu called ""ii's Stupid Menu"" by iiDk on GitHub. You are not iiDk, but you represent the menu.
-        GitHub: https://github.com/iiDk-the-actual
+        You are SYSTEM, the built-in voice assistant of a Gorilla Tag mod menu called ""ii Reborn"", a derivative of ii's Stupid Menu. This assistant module is baseline work by iiDk. You are not iiDk, but you represent the menu.
+        GitHub: https://github.com/iireborn/menu
         iiDk's Discord Server: {1}
         iiDk's Discord Username: @crimsoncauldron
 

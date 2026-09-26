@@ -1,5 +1,5 @@
 /*
- * ii's Stupid Menu (Reborn)
+ * ii Reborn
  * Portions Copyright (C) 2025–2026 Goldentrophy Software
  * Licensed under GNU GPL v3.0-or-later — see LICENSE and NOTICE.
  * This file is part of a derivative work; see NOTICE for attribution
@@ -370,7 +370,7 @@ namespace iiMenu.Menu
             else
             {
                 if (!File.Exists(hideGUIPath))
-                    File.WriteAllText(hideGUIPath, "Text file generated with ii's Stupid Menu");
+                    File.WriteAllText(hideGUIPath, "Text file generated with ii Reborn");
             }
 
             GameObject closeMessage = uiPrefab.transform.Find("Canvas")?.Find("HideMessage")?.gameObject;

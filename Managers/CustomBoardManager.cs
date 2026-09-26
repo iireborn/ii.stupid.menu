@@ -1,5 +1,5 @@
 ﻿/*
- * ii's Stupid Menu (Reborn)
+ * ii Reborn
  * Portions Copyright (C) 2025–2026 Goldentrophy Software
  * Licensed under GNU GPL v3.0-or-later — see LICENSE and NOTICE.
  * This file is part of a derivative work; see NOTICE for attribution
@@ -185,11 +185,14 @@ namespace iiMenu.Managers
         public const int StumpLeaderboardIndex = 3;
         public const int ForestLeaderboardIndex = 6;
 
-        public static string motdTemplate = "You are using build {0}. This menu was created by iiDk (@crimsoncauldron) on Discord. " +
+        public static string motdTemplate = "You are using build {0} of ii Reborn. " +
         "This menu is completely free and open sourced, if you paid for this menu you have been scammed. " +
         "There are a total of <b>{1}</b> mods on this menu. " +
-        "<color=red>I, iiDk, am not responsible for any bans using this menu.</color> " +
-        "If you get banned while using this, it's your responsibility.\n\nCurrent menu status: <b>Loading...</b>\nMade with <3 by iiDk, kingofnetflix, and others\n\n<alpha=128>{2} {0} {3}<alpha=255>";
+        "<color=red>We are not responsible for any bans using this menu.</color> " +
+        "If you get banned while using this, it's your responsibility.\n\n" +
+        "Current menu status: <b>Loading...</b>\n" +
+        "Made with <3 by the ii Reborn contributors\n\n" +
+        "<alpha=128>{2} {0} {3} — ii Reborn is a derivative work based on ii's Stupid Menu, the original work of Goldentrophy Software. It is not affiliated with or endorsed by Goldentrophy Software or iiDk.<alpha=255>";
 
         public Material forestMaterial;
         public Material stumpMaterial;
@@ -420,7 +423,7 @@ namespace iiMenu.Managers
 
                 motdHeadingText.richText = true;
                 motdHeadingText.SafeSetFontSize(100);
-                motdHeadingText.SafeSetText($"Thanks for using {(doCustomName ? customMenuName : "ii's <b>Stupid</b> Menu")}!");
+                motdHeadingText.SafeSetText($"Thanks for using {(doCustomName ? customMenuName : "ii <b>Reborn</b>")}!");
                 motdHeadingText.SafeSetFontStyle(activeFontStyle);
                 motdHeadingText.SafeSetFont(activeFont);
                 FollowMenuSettings(motdHeadingText, -4f);
@@ -855,7 +858,7 @@ namespace iiMenu.Managers
 
             if (target.overlay == null)
             {
-                target.overlay = new GameObject("ii's Stupid Menu Screen Overlay");
+                target.overlay = new GameObject("ii Reborn Screen Overlay");
                 target.overlay.layer = renderer.gameObject.layer;
                 target.overlay.AddComponent<MeshFilter>().sharedMesh = CreateQuadMesh();
 
@@ -961,7 +964,7 @@ namespace iiMenu.Managers
 
         private static Mesh CreateQuadMesh()
         {
-            Mesh mesh = new Mesh { name = "iiStupidMenuScreenOverlay" };
+            Mesh mesh = new Mesh { name = "iiRebornScreenOverlay" };
 
             mesh.vertices = new[]
             {

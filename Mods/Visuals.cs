@@ -1,5 +1,5 @@
 ﻿/*
- * ii's Stupid Menu (Reborn)
+ * ii Reborn
  * Portions Copyright (C) 2025–2026 Goldentrophy Software
  * Licensed under GNU GPL v3.0-or-later — see LICENSE and NOTICE.
  * This file is part of a derivative work; see NOTICE for attribution
@@ -164,7 +164,7 @@ namespace iiMenu.Mods
         public static void ConductDebug()
         {
             string text = "";
-            text += "<color=blue><b>ii's Stupid Menu </b></color>" + PluginInfo.Version + "\\n \\n";
+            text += "<color=blue><b>ii Reborn </b></color>" + PluginInfo.Version + "\\n \\n";
             
             string red = "<color=red>" + MathF.Floor(PlayerPrefs.GetFloat("redValue") * 255f) + "</color>";
             string green = ", <color=green>" + MathF.Floor(PlayerPrefs.GetFloat("greenValue") * 255f) + "</color>";
@@ -588,7 +588,7 @@ namespace iiMenu.Mods
 
             Text watchTextComponent = regwatchText.GetComponent<Text>();
 
-            if (infoWatchMenuName || defaultWatch) watchTextComponent.text = "ii's Stupid Menu\n<color=grey>";
+            if (infoWatchMenuName || defaultWatch) watchTextComponent.text = "ii Reborn\n<color=grey>";
             if (doCustomName && (infoWatchMenuName || defaultWatch))
                 watchTextComponent.text = NoRichtextTags(customMenuName) + "\n<color=grey>";
             if (!infoWatchMenuName && !defaultWatch)
